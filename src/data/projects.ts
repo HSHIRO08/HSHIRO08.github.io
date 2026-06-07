@@ -1,0 +1,176 @@
+﻿export interface Project {
+  id: string
+  title: string
+  client: string
+  categories: string[]
+  year: number
+  description: string
+  thumbnail: string
+  heroImage: string
+  featured: boolean
+  color: string
+  github: string
+  tech: string[]
+  caseStudy: {
+    challenge: string
+    approach: string
+    result: string
+  }
+}
+
+export const projects: Project[] = [
+  {
+    id: "autorent-frontend",
+    title: "AutoRent Frontend",
+    client: "Fullstack Car Rental System",
+    categories: ["Frontend", "TypeScript"],
+    year: 2026,
+    description: "Ứng dụng web cho thuê ô tô với 3 vai trò: khách hàng, chủ xe và admin. Xây dựng bằng React 19 + TypeScript + TanStack Query.",
+    thumbnail: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+    heroImage: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=85",
+    featured: true,
+    color: "#c8f63e",
+    github: "https://github.com/HSHIRO08/AutoRent-Car-Rental-Frontendv2.0",
+    tech: ["React 19", "TypeScript", "Vite", "TanStack Query", "Axios", "React Router"],
+    caseStudy: {
+      challenge: "Xây dựng một ứng dụng web đa vai trò cho hệ thống cho thuê ô tô, đảm bảo trải nghiệm người dùng mượt mà cho cả khách hàng, chủ xe và quản trị viên với các quyền hạn khác nhau.",
+      approach: "Sử dụng React 19 + Vite + TypeScript cho frontend, TanStack Query để quản lý server state và cache hiệu quả. Cấu trúc phân lớp rõ ràng: api/ → components/ → pages/ theo từng role. Kiểm tra lịch trùng ở frontend trước khi gửi request.",
+      result: "Hoàn thành MVP với đầy đủ luồng: đăng ký/đăng nhập phân quyền, khách hàng tìm xe & booking, chủ xe CRUD xe & theo dõi booking, admin dashboard tổng quan. TypeScript 89.9% codebase đảm bảo type safety."
+    }
+  },
+  {
+    id: "newrental-api",
+    title: "NewRentalCar Manager API",
+    client: "Backend ASP.NET Core",
+    categories: ["Backend", "C#"],
+    year: 2025,
+    description: "RESTful API cho hệ thống quản lý cho thuê xe ô tô. Clean Architecture với UoW pattern, ASP.NET Core, SQL Server.",
+    thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
+    heroImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&q=85",
+    featured: true,
+    color: "#e8b84b",
+    github: "https://github.com/HSHIRO08/NewRentalCarManagerAPI",
+    tech: ["C#", "ASP.NET Core", "Clean Architecture", "Unit of Work", "SQL Server", "Entity Framework"],
+    caseStudy: {
+      challenge: "Thiết kế một API backend có kiến trúc rõ ràng, dễ mở rộng và bảo trì cho hệ thống quản lý cho thuê xe với nhiều tính năng phức tạp như quản lý booking, phân quyền và xử lý thanh toán.",
+      approach: "Áp dụng Clean Architecture: phân tách Domain/Application/Infrastructure/Controllers. Implement Unit of Work tự động để đảm bảo tính nhất quán dữ liệu. Middleware xử lý authentication và error handling tập trung.",
+      result: "API hoàn chỉnh với kiến trúc clean, dễ test và mở rộng. Tích hợp thành công với AutoRent Frontend v2.0. 100% C# codebase với đầy đủ migrations và documentation."
+    }
+  },
+  {
+    id: "mobile-rental-v2",
+    title: "Mobile Rental Car v2.0",
+    client: "React Native App",
+    categories: ["Mobile", "TypeScript"],
+    year: 2026,
+    description: "Ứng dụng di động cho hệ thống cho thuê xe, xây dựng bằng React Native + TypeScript. Phiên bản 2.0 với nhiều cải tiến.",
+    thumbnail: "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=800&q=80",
+    heroImage: "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=1600&q=85",
+    featured: true,
+    color: "#c8f63e",
+    github: "https://github.com/HSHIRO08/mobile_Rentalcarv2.0",
+    tech: ["React Native", "TypeScript", "Expo", "REST API"],
+    caseStudy: {
+      challenge: "Phát triển ứng dụng mobile cross-platform cho hệ thống cho thuê xe, đảm bảo UX tốt trên cả iOS và Android, đồng bộ với backend API.",
+      approach: "Sử dụng React Native + TypeScript với Expo để phát triển nhanh chóng. Tái sử dụng business logic từ frontend web, thiết kế giao diện tối ưu cho màn hình nhỏ với touch-first interactions.",
+      result: "Ứng dụng mobile hoàn chỉnh, chạy mượt trên cả iOS và Android. TypeScript đảm bảo consistency với codebase web. Phiên bản 2.0 cải thiện đáng kể hiệu năng và UX so với v1."
+    }
+  },
+  {
+    id: "robot-hut-bui",
+    title: "Robot Hút Bụi AI",
+    client: "AI State Space Search",
+    categories: ["AI/ML", "JavaScript"],
+    year: 2025,
+    description: "Mô phỏng robot hút bụi thông minh sử dụng BFS, DFS, A* và Spiral Pattern trên HTML5 Canvas. Visualize thuật toán tìm kiếm trực quan.",
+    thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+    heroImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1600&q=85",
+    featured: true,
+    color: "#ff6b6b",
+    github: "https://github.com/HSHIRO08/Robot-hut-bui",
+    tech: ["JavaScript", "HTML5 Canvas", "BFS", "DFS", "A* Search", "Spiral Pattern"],
+    caseStudy: {
+      challenge: "Triển khai và visualize các thuật toán tìm kiếm trong không gian trạng thái (State Space Search) cho bài toán robot hút bụi, giúp học và so sánh hiệu quả từng thuật toán một cách trực quan.",
+      approach: "Xây dựng canvas visualization tương tác với 4 thuật toán: BFS (đảm bảo đường ngắn nhất), DFS (tiết kiệm bộ nhớ), A* với heuristic Manhattan Distance (tối ưu), và Spiral Pattern (đơn giản hiệu quả). Grid có thể tùy chỉnh từ 5×5 đến 20×20.",
+      result: "Ứng dụng demo hoàn chỉnh với statistics real-time (số bước, tiến độ, hiệu suất). Hỗ trợ điều chỉnh tốc độ animation, tỷ lệ chướng ngại vật. 1 star, được sử dụng như tài liệu học AI."
+    }
+  },
+  {
+    id: "project-ml-gpa",
+    title: "ML Dự Đoán GPA Sinh Viên",
+    client: "Machine Learning + Flask",
+    categories: ["AI/ML", "Python"],
+    year: 2026,
+    description: "Ứng dụng dự đoán kết quả học tập sinh viên bằng Decision Tree và Machine Learning. Backend Flask, visualize kết quả trực quan.",
+    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=85",
+    featured: false,
+    color: "#c8f63e",
+    github: "https://github.com/HSHIRO08/Project_MLGPA",
+    tech: ["Python", "scikit-learn", "Flask", "Decision Tree", "Pandas", "Matplotlib"],
+    caseStudy: {
+      challenge: "Xây dựng mô hình Machine Learning dự đoán kết quả học tập sinh viên từ dữ liệu GPA, giúp phát hiện sớm các sinh viên có nguy cơ học kém để can thiệp kịp thời.",
+      approach: "Thu thập và phân tích dữ liệu 180 sinh viên. Huấn luyện mô hình Decision Tree với scikit-learn. Visualize decision tree và metrics đánh giá mô hình. Flask web app để nhập liệu và xem kết quả dự đoán.",
+      result: "Mô hình hoạt động tốt với dataset 180 sinh viên. Có đầy đủ visualizations: phân tích dữ liệu, so sánh mô hình, cây quyết định. Web app Flask dễ sử dụng cho người không có background tech."
+    }
+  },
+  {
+    id: "project-java-bike",
+    title: "Quản Lý Xe Đạp Thể Thao",
+    client: "Java Desktop App",
+    categories: ["Full-Stack", "Java"],
+    year: 2025,
+    description: "Ứng dụng desktop Java quản lý cửa hàng bán xe đạp thể thao. CRUD đầy đủ, quản lý kho, báo cáo doanh thu.",
+    thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=85",
+    featured: false,
+    color: "#e8b84b",
+    github: "https://github.com/HSHIRO08/Project-Java-1",
+    tech: ["Java", "Swing", "MySQL", "JDBC"],
+    caseStudy: {
+      challenge: "Xây dựng hệ thống quản lý cửa hàng bán xe đạp thể thao hoàn chỉnh, bao gồm quản lý sản phẩm, khách hàng, đơn hàng và báo cáo doanh thu.",
+      approach: "Phát triển ứng dụng desktop Java với Swing UI. Kết nối MySQL qua JDBC. Thiết kế đầy đủ CRUD cho products/customers/orders, hệ thống báo cáo lợi nhuận theo thời gian.",
+      result: "Ứng dụng desktop hoàn chỉnh với 1 star. Đây là project Java đầu tiên, đánh dấu bước chuyển từ lập trình cơ bản sang ứng dụng thực tế với database."
+    }
+  },
+  {
+    id: "bayes-prediction",
+    title: "Dự Đoán Bayes",
+    client: "Naive Bayes Classifier",
+    categories: ["AI/ML", "Python"],
+    year: 2025,
+    description: "Bài toán phân loại dùng thuật toán Naive Bayes. Phân tích dữ liệu và dự đoán với xác suất Bayesian.",
+    thumbnail: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&q=80",
+    heroImage: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=1600&q=85",
+    featured: false,
+    color: "#c8f63e",
+    github: "https://github.com/HSHIRO08/duanbsichandoanBayes",
+    tech: ["Python", "Naive Bayes", "scikit-learn", "Probability Theory"],
+    caseStudy: {
+      challenge: "Ứng dụng thuật toán Naive Bayes để giải bài toán phân loại/dự đoán, hiểu sâu về xác suất Bayesian và cách áp dụng vào Machine Learning thực tế.",
+      approach: "Nghiên cứu lý thuyết Bayes, implement Naive Bayes Classifier với scikit-learn. Phân tích dữ liệu, tính xác suất prior/likelihood/posterior, đánh giá accuracy mô hình.",
+      result: "Hiểu sâu về probabilistic reasoning trong ML. 1 star, được ghi nhận là tài liệu học tốt về Bayesian methods cho sinh viên IT Việt Nam."
+    }
+  },
+  {
+    id: "project-html-seed",
+    title: "Web Bán Hạt Giống",
+    client: "HTML/CSS/JavaScript",
+    categories: ["Frontend", "JavaScript"],
+    year: 2025,
+    description: "Website bán hàng hạt giống basic. Dự án đầu tiên với HTML, CSS, JavaScript thuần.",
+    thumbnail: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80",
+    heroImage: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=85",
+    featured: false,
+    color: "#e8b84b",
+    github: "https://github.com/HSHIRO08/Project-HTML-1",
+    tech: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+    caseStudy: {
+      challenge: "Xây dựng website thương mại điện tử bán hạt giống với HTML/CSS/JS thuần, không dùng framework. Học cách tạo giao diện responsive và xử lý sự kiện.",
+      approach: "Thiết kế UI từ đầu với HTML5 semantic, CSS3 Flexbox/Grid, JavaScript vanilla. Tạo catalog sản phẩm, giỏ hàng và form đặt hàng cơ bản.",
+      result: "Dự án web đầu tiên hoàn chỉnh với 1 star. Là nền tảng để học React và các framework hiện đại sau này. Responsive trên mobile và desktop."
+    }
+  }
+]
+
+export const categories = ["All", "Frontend", "Backend", "Mobile", "AI/ML", "Full-Stack", "JavaScript", "TypeScript", "C#", "Python", "Java"]

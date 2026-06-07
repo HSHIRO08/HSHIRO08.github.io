@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bebas Neue", sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+
+  --color-bg: #080808;
+  --color-surface: #111111;
+  --color-text: #f0ede6;
+  --color-muted: rgba(240, 237, 230, 0.5);
+  --color-accent: #c8f63e;
+  --color-border: rgba(240, 237, 230, 0.1);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* ─── Base Reset ──────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #080808;
+  color: #f0ede6;
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: #080808;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100svh;
+  background-color: #080808;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-thumb { background: rgba(240,237,230,0.15); border-radius: 2px; }
+
+/* Hide default cursor globally */
+html, body, *, *::before, *::after { cursor: none !important; }
+
+:focus-visible {
+  outline: 2px solid #c8f63e;
+  outline-offset: 4px;
+}
+
+/* ─── Typography helpers ──────────────────────── */
+.text-hero {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3rem, 10vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.text-xl-display {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.5rem, 7vw, 7rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.text-statement {
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  line-height: 1.15;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Layout ──────────────────────────────────── */
+.container-fluid {
+  width: 100%;
+  padding-left: clamp(2rem, 8vw, 8rem);
+  padding-right: clamp(2rem, 8vw, 8rem);
+}
+
+/* ─── Image containers ────────────────────────── */
+.img-cover {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-cover:hover img {
+  transform: scale(1.05);
+}
+
+/* ─── Ticker ──────────────────────────────────── */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  animation: ticker 22s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+/* ─── Motion reduced ──────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .ticker-track { animation: none; }
+}
